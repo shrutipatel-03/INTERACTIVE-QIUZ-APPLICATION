@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
-
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodTech Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="quiz-container">
 
-    <div class="main">
-        <div class="container">
-
-            <div class="landing-page">
-                <img src="https://cdn-icons-png.flaticon.com/512/2958/2958990.png" alt="">
-                <h1>Quiz App</h1>
-                <div class="line"></div>
-                <p>Test your knowledge with this app!</p>
-
-                <button onclick="showGameCategory()">Start Now!</button>
-            </div>
-
-            <div class="game-category" style="display: none;">
-                <h1>Choose Category</h1>
-                <div class="line"></div>
-
-                <div class="category-options">
-                    <button onclick="showQuiz(9)">JAVA</button>
-                    <button onclick="showQuiz(17)">PYTHON</button>
-                    <button onclick="showQuiz(19)">JAVASCRIPT</button>
-                    <button onclick="showQuiz(22)">C++</button>
-                </div>
-            </div>
-
-            <div class="quiz" style="display: none;">
-                <h2 id="question"></h2>
-
-                <div id="options-container">
-
-                </div>
-
-                <button class="restart-game" onclick="showLandingPage()">Restart Game</button>
-            </div>
-
-        </div>
+    <!-- Landing Page -->
+    <div id="start-screen">
+      <h1>Quiz App</h1>
+      <button id="start-btn">Start Quiz</button>
     </div>
 
-    <!-- Script JS -->
-    <script src="./script.js"></script>
-</body>
+    <!-- Language Selection -->
+    <div id="language-select" class="hidden">
+      <h2>Select Quiz Category</h2>
+      <button class="lang-btn" data-lang="javascript">JavaScript</button>
+      <button class="lang-btn" data-lang="html">HTML</button>
+      <button class="lang-btn" data-lang="css">CSS</button>
+    </div>
 
+    <!-- Quiz Box -->
+    <div id="quiz-box" class="hidden">
+      <p id="question">Loading question...</p>
+      <div id="options"></div>
+      <button id="next-btn" disabled>Next</button>
+    </div>
+
+    <!-- Result Box -->
+    <div id="result-box" class="hidden">
+      <h2>Quiz Completed!</h2>
+      <p id="score"></p>
+      <p class="certificate-msg">
+        🎉 A Completion Certificate will be issued on your internship end date by <strong>CodTech</strong>.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
